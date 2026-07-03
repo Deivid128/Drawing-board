@@ -28,14 +28,19 @@ Adicionei o BrushConfigurationsController.js, mas ainda não comecei a programar
 
 Terminei de fazer as funções ultilitarias (clear, undo, width, color), mas apareceu um prolema:
 
-'Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See'
+'Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See [link]'
 
 Ainda não sei o que significa, mas ele não causa erros no funcionamento; ainda assim vou atrás de resolver.
 
 [2026-07-03]
 
--- Sexto commito: "Fixed"
+-- Sexto commit: "Fixed"
 
 O problema não era um 'problema', mas já foi removido.
 Nomes dos arquivos reformulados.
 
+[2026-07-03]
+
+-- Setimo commit: "Change canvas size"
+
+Eu aumentei o tamanho do quadro de desenho.
