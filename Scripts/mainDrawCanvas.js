@@ -87,9 +87,6 @@ function stopDrawing(event) {
         configurations.restoreArray.push(context.getImageData(0, 0, canvas.width, canvas.height))
         configurations.setAttribute("index", configurations.index + 1);
     };
-
-    console.log(configurations);
-
 }
 
 canvas.addEventListener("mousedown", startDrawing, false);
