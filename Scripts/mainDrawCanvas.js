@@ -45,11 +45,6 @@ function getClickPos(event) {
 function draw(event) {
     if (event.button === 2) return;
 
-console.log(
-    configurations.lineWidth,
-    typeof configurations.lineWidth
-);
-
     const { xPos, yPos } = getClickPos(event);
 
     if (configurations.isDrawing) {
