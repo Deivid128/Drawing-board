@@ -31,17 +31,14 @@ function getColor() {
     if (color != null) {
         configurations.setAttribute("lineColor", color);
     };
-
 }
 
 function getWidth() {
     const range = rangeWidthField.value;
 
     if (range != null) {
-        configurations.setAttribute("lineWidth", range);
+        configurations.setAttribute("lineWidth", Number(range));
     };
-
-    event.preventDefault();
 }
 
 clearButton.addEventListener("click", clear, false);

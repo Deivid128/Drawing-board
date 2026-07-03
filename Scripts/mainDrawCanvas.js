@@ -1,5 +1,7 @@
 const canvas = document.getElementById("canvas");
-const context = canvas.getContext("2d");
+const context = canvas.getContext("2d", {
+    willReadFrequently: true
+});
 
 const windowWidth = window.innerWidth;
 const windowHeight = window.innerHeight;
@@ -8,23 +10,30 @@ const background = "#ffffff";
 context.fillStyle = background;
 context.fillRect(0, 0, canvas.width, canvas.height);
 
+
 class Configurations {
-    constructor(color = "black", width = "1") {
+    constructor(color = "black", width = 1) {
         this.restoreArray = [];
         this.index = -1;
         this.lineColor = color;
-        this.lineWidth = Number(width) === 0? "1": width;
+        this.lineWidth = width || 1;
         this.isDrawing = false;
     }
 
     setAttribute(attribute, newValue) {
-        if (this[attribute] != null) {
+        if (attribute in this) {
             this[attribute] = newValue;
         };
     }
 }
 
 let configurations = new Configurations();
+
+configurations.restoreArray.push(
+    context.getImageData(0, 0, canvas.width, canvas.height)
+);
+
+configurations.setAttribute("index", 0);
 
 function getClickPos(event) {
     return {
@@ -35,6 +44,11 @@ function getClickPos(event) {
 
 function draw(event) {
     if (event.button === 2) return;
+
+console.log(
+    configurations.lineWidth,
+    typeof configurations.lineWidth
+);
 
     const { xPos, yPos } = getClickPos(event);
 
@@ -74,12 +88,13 @@ function stopDrawing(event) {
     event.preventDefault();
 
     if (event.type != "mouseout") {
+        configurations.restoreArray.length = configurations.index + 1;
         configurations.restoreArray.push(context.getImageData(0, 0, canvas.width, canvas.height))
         configurations.setAttribute("index", configurations.index + 1);
     };
 
     console.log(configurations);
-    
+
 }
 
 canvas.addEventListener("mousedown", startDrawing, false);
