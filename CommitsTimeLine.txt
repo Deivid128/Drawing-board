@@ -12,3 +12,8 @@ ReadMe adicionado. (Ainda sem texto).
 -- Terceiro commit: "Fixing an incorrect commit"
 
 Enviei um commit sem todos os elementos adicionados, esse commit apenas corrige isso.
+
+-- Quarto commit: "Continued mainDrawCanvas.js and added BrushConfigurationsController.js"
+
+Continuei e já está quase pronto o mainDrawCanvas.js.
+Adicionei o BrushConfigurationsController.js, mas ainda não comecei a programar o código dele.
