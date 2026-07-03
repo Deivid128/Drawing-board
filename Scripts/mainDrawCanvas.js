@@ -4,10 +4,16 @@ const context = canvas.getContext("2d");
 const windowWidth = window.innerWidth;
 const windowHeight = window.innerHeight;
 
+const background = "#ffffff";
+context.fillStyle = background;
+context.fillRect(0, 0, canvas.width, canvas.height);
+
 class Configurations {
     constructor(color = "black", width = "1") {
+        this.restoreArray = [];
+        this.index = -1;
         this.lineColor = color;
-        this.lineWidth = width;
+        this.lineWidth = Number(width) === 0? "1": width;
         this.isDrawing = false;
     }
 
@@ -21,16 +27,15 @@ class Configurations {
 let configurations = new Configurations();
 
 function getClickPos(event) {
-    const rect = canvas.getBoundingClientRect();
     return {
-        xPos: event.clientX - rect.left,
-        yPos: event.clientY - rect.top,
+        xPos: event.clientX - canvas.offsetLeft,
+        yPos: event.clientY - canvas.offsetTop,
     };
 }
 
 function draw(event) {
     if (event.button === 2) return;
-    
+
     const { xPos, yPos } = getClickPos(event);
 
     if (configurations.isDrawing) {
@@ -67,10 +72,17 @@ function stopDrawing(event) {
     };
 
     event.preventDefault();
-}
 
+    if (event.type != "mouseout") {
+        configurations.restoreArray.push(context.getImageData(0, 0, canvas.width, canvas.height))
+        configurations.setAttribute("index", configurations.index + 1);
+    };
+
+    console.log(configurations);
+    
+}
 
 canvas.addEventListener("mousedown", startDrawing, false);
 canvas.addEventListener("mousemove", draw, false);
 canvas.addEventListener("mouseup", stopDrawing, false);
-canvas.addEventListener("mouseleave", stopDrawing, false);
+canvas.addEventListener("mouseout", stopDrawing, false);

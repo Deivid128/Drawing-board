@@ -17,3 +17,12 @@ Enviei um commit sem todos os elementos adicionados, esse commit apenas corrige 
 
 Continuei e já está quase pronto o mainDrawCanvas.js.
 Adicionei o BrushConfigurationsController.js, mas ainda não comecei a programar o código dele.
+
+-- Quinto commit: "Finish"
+
+Terminei de fazer as funções ultilitarias (clear, undo, width, color), mas apareceu um prolema:
+
+'Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See'
+
+Ainda não sei o que significa, mas ele não causa erros no funcionamento; ainda assim vou atrás de resolver.
+
