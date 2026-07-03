@@ -1,0 +1,14 @@
+-- Primeiro commit: "First commit"
+
+Apenas criei a base do HTML e estilizei de forma simples os elementos.
+
+-- Segundo commit: "Added mainCanvas.js"
+
+Criei 'mainCanvas.js' e declarei constantes.
+Nada de mais, apenas uma implementação para o futuro.
+Nome desse arquivo ('CommitsTimeLine.txt') alterado de ReadMe -> CommitsTimeLine.txt.
+ReadMe adicionado. (Ainda sem texto).
+
+-- Terceiro commit: "Fixing an incorrect commit"
+
+Enviei um commit sem todos os elementos adicionados, esse commit apenas corrige isso.
