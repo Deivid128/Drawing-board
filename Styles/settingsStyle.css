@@ -1,0 +1,24 @@
+.settings {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.settings input[type=button] {
+    border: solid 2px black;
+    border-radius: 1em;
+    padding: .5em;
+
+    transition: all ease .5s;
+}
+
+.settings input[type=button]:hover {
+    transform: scale(1.06);
+}
+
+.settings input[type=button]:active {
+    transform: scale(.9);
+}
+    

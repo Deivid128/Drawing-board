@@ -1,0 +1,28 @@
+* {
+    padding: 0;;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #3a446e;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5rem;
+}
