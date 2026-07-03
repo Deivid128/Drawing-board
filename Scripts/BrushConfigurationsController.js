@@ -10,7 +10,6 @@ function undo(event) {
         clear();
     } else {
         configurations.setAttribute("index", configurations.index-1);
-        configurations.restoreArray.pop();
         context.putImageData(configurations.restoreArray[configurations.index], 0, 0);
     };
 }

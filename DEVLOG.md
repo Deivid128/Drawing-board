@@ -44,3 +44,9 @@ Nomes dos arquivos reformulados.
 -- Setimo commit: "Change canvas size"
 
 Eu aumentei o tamanho do quadro de desenho.
+
+[2026-07-03]
+
+-- Oitavo commit: "Bit fix"
+
+Apenas um pequeno ajuste para futuras atualizações.
