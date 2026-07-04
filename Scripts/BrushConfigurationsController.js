@@ -54,3 +54,21 @@ colorField.addEventListener("change", getColor, false);
 rangeWidthField.addEventListener("change", getWidth, false);
 undoButton.addEventListener("click", undo, false);
 redoButon.addEventListener("click", redo, false);
+
+document.addEventListener("keypress", (e) => {
+    
+    if (!e.ctrlKey) return;
+    
+    switch (e.key.toLowerCase()) {
+        case "z":
+            e.preventDefault();
+            undo();
+            break;
+            
+            case "y":
+            e.preventDefault();
+            redo();
+            break;
+    };
+
+});

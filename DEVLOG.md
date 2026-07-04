@@ -53,3 +53,6 @@ Apenas um pequeno ajuste para futuras atualizações.
 
 -- Nono commit: "Redo added"
 
+[2026-07-04]
+
+-- Decimo commit: "Keyboard shortCurts added"
