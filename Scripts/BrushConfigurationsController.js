@@ -1,15 +1,24 @@
 const undoButton = document.getElementById("undo");
+const redoButon = document.getElementById("redo");
 const clearButton = document.getElementById("clear");
 const colorField = document.getElementById("color");
 const rangeWidthField = document.getElementById("rangeWidth");
 
 rangeWidthField.value = configurations.lineWidth;
 
-function undo(event) {
+function redo() {
+    if (configurations.index >= configurations.restoreArray.length - 1) {
+        return;
+    }
+    configurations.setAttribute("index", configurations.index + 1);
+    context.putImageData(configurations.restoreArray[configurations.index], 0, 0);
+}
+
+function undo() {
     if (configurations.index <= 0) {
         clear();
     } else {
-        configurations.setAttribute("index", configurations.index-1);
+        configurations.setAttribute("index", configurations.index - 1);
         context.putImageData(configurations.restoreArray[configurations.index], 0, 0);
     };
 }
@@ -44,3 +53,4 @@ clearButton.addEventListener("click", clear, false);
 colorField.addEventListener("change", getColor, false);
 rangeWidthField.addEventListener("change", getWidth, false);
 undoButton.addEventListener("click", undo, false);
+redoButon.addEventListener("click", redo, false);
