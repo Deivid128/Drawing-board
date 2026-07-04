@@ -56,3 +56,8 @@ Apenas um pequeno ajuste para futuras atualizações.
 [2026-07-04]
 
 -- Decimo commit: "Keyboard shortCurts added"
+
+[2026-07-04]
+
+-- Decimo primeiro commit: "Bug fix"
+
