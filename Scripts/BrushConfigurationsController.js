@@ -55,20 +55,15 @@ rangeWidthField.addEventListener("change", getWidth, false);
 undoButton.addEventListener("click", undo, false);
 redoButon.addEventListener("click", redo, false);
 
-document.addEventListener("keypress", (e) => {
-    
+document.addEventListener("keydown", (e) => {
     if (!e.ctrlKey) return;
-    
-    switch (e.key.toLowerCase()) {
-        case "z":
-            e.preventDefault();
-            undo();
-            break;
-            
-            case "y":
-            e.preventDefault();
-            redo();
-            break;
-    };
+
+    if (e.key.toLowerCase() === "z") {
+        e.preventDefault();
+        undo();
+    } else if (e.key.toLowerCase() === "y") {
+        e.preventDefault();
+        redo();
+    }
 
 });
