@@ -40,7 +40,7 @@ function clear(event) {
     context.fillRect(0, 0, canvas.width, canvas.height);
 
     configurations.setAttribute("restoreArray", []);
-    configurations.setAttribute("index", 0);
+    configurations.setAttribute("index", -1);
 }
 
 function setColor(color, isManualChange = false, event) {
@@ -81,7 +81,7 @@ colorField.addEventListener("change", (e) => {
         setColor(color, true, e);
     };
 }, false);
-color_change.addEventListener("mousedown", (e) => setColor(configurations.restoreColorm, false, External));
+color_change.addEventListener("mousedown", (e) => setColor(configurations.restoreColor, false, External));
 color_red.addEventListener("mousedown", (e) => setColor("red", false, e));
 color_blue.addEventListener("mousedown", (e) => setColor("blue", false, e));
 color_green.addEventListener("mousedown", (e) => setColor("green", false, e));
