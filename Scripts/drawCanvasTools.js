@@ -22,9 +22,11 @@ function redo(event) {
     context.putImageData(configurations.restoreArray[configurations.index], 0, 0);
 }
 
-function undo() {
+function undo(event) {
+    if (event.button === 2) return;
+
     if (configurations.index <= 0) {
-        clear();
+        clear(event);
     } else {
         configurations.setAttribute("index", configurations.index - 1);
         context.putImageData(configurations.restoreArray[configurations.index], 0, 0);
@@ -90,10 +92,10 @@ document.addEventListener("keydown", (e) => {
 
     if (e.key.toLowerCase() === "z") {
         e.preventDefault();
-        undo();
+        undo(e);
     } else if (e.key.toLowerCase() === "y") {
         e.preventDefault();
-        redo();
+        redo(e);
     }
 
 });
