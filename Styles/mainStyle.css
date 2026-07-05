@@ -1,10 +1,12 @@
 * {
-    padding: 0;;
+    padding: 0;
+    ;
     margin: 0;
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     width: 100vw;
     min-height: 100vh;
 }
@@ -21,8 +23,11 @@ body {
 .field {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 
     gap: 2rem;
+
+    width: 100vw;
+    min-height: 100vh;
 }

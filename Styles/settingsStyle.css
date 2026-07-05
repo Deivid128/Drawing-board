@@ -21,4 +21,51 @@
 .settings input[type=button]:active {
     transform: scale(.9);
 }
-    
+
+.colorsField {
+    width: 30vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.settedColors {
+    width: 10vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+}
+
+.settedColors button, input[type=color] {
+    width: 2em;
+    height: 2em;
+
+    border: solid 1.5px black;
+    border-radius: 5px;
+
+    transition: all ease .5s;
+
+}
+
+.settedColors button[id=color_red] {
+    background-color: red;
+}
+
+.settedColors button[id=color_blue] {
+    background-color: blue;
+}
+
+.settedColors button[id=color_green] {
+    background-color: green;
+}
+
+.settedColors button:hover, input[type=color]:hover {
+    transform: scale(1.06);
+}
+
+.settedColors button:active, input[type=color]:active {
+    transform: scale(.9);
+}

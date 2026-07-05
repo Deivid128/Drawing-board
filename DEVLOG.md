@@ -61,3 +61,6 @@ Apenas um pequeno ajuste para futuras atualizações.
 
 -- Decimo primeiro commit: "Bug fix"
 
+[2026-07-05]
+
+-- Decimo segundo commit: "Preset Colors added"

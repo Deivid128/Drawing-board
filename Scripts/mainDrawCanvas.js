@@ -18,6 +18,8 @@ class Configurations {
         this.lineColor = color;
         this.lineWidth = width || 1;
         this.isDrawing = false;
+        this.colorIndex = 0;
+        this.restoreColor = "black";
     }
 
     setAttribute(attribute, newValue) {

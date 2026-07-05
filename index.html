@@ -17,24 +17,36 @@
 <body>
 
     <div class="field">
-        <canvas id="canvas" width="1520" height="600"></canvas>
+        <canvas id="canvas" width="1520" height="550"></canvas>
 
         <div class="settings">
+
+            <div class="colorsField">
+
+                <div class="settedColors">
+                    
+                    <button type="button" id="color_change"></button>
+                    <button type="button" id="color_red"></button>
+                    <button type="button" id="color_blue"></button>
+                    <button type="button" id="color_green"></button>
+
+                </div>
+
+                <input type="color" id="color">
+            </div>
 
             <input type="button" value="Refazer" id="redo">
             <input type="button" value="Desfazer" id="undo">
             <input type="button" value="Apagar" id="clear">
             <input type="range" id="rangeWidth">
-            <input type="color" id="color">
 
         </div>
     </div>
 
-
     <!-- JS scripts -->
 
     <script src="Scripts/mainDrawCanvas.js"></script>
-    <script src="Scripts/brushConfigurationsController.js"></script>
+    <script src="Scripts/drawCanvasTools.js"></script>
 </body>
 
 </html>
