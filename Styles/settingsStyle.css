@@ -39,7 +39,8 @@
     gap: 2px;
 }
 
-.settedColors button, input[type=color] {
+.settedColors button,
+input[type=color] {
     width: 2em;
     height: 2em;
 
@@ -62,10 +63,12 @@
     background-color: green;
 }
 
-.settedColors button:hover, input[type=color]:hover {
+.settedColors button:hover,
+input[type=color]:hover {
     transform: scale(1.06);
 }
 
-.settedColors button:active, input[type=color]:active {
+.settedColors button:active,
+input[type=color]:active {
     transform: scale(.9);
 }

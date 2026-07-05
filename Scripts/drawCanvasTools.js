@@ -10,7 +10,6 @@ const color_blue = document.getElementById("color_blue");
 const color_green = document.getElementById("color_green");
 
 color_change.style.backgroundColor = configurations.lineColor;
-
 rangeWidthField.value = configurations.lineWidth;
 
 function redo(event) {
@@ -45,14 +44,12 @@ function clear(event) {
 }
 
 function setColor(color, isManualChange = false) {
-    console.log(color);
-
     if (color != null) {
         configurations.setAttribute("lineColor", color);
 
         if (isManualChange) configurations.setAttribute("colorIndex", configurations.colorIndex + 1);
 
-        if (configurations.colorIndex === 3) {
+        if (configurations.colorIndex === 2) {
             color_change.style.backgroundColor = color;
             configurations.setAttribute("restoreColor", color);
             configurations.setAttribute("colorIndex", 0);
@@ -71,6 +68,10 @@ function getWidth(event) {
 }
 
 clearButton.addEventListener("mousedown", clear, false);
+rangeWidthField.addEventListener("change", getWidth, false);
+undoButton.addEventListener("mousedown", undo, false);
+redoButon.addEventListener("mousedown", redo, false);
+
 colorField.addEventListener("change", () => {
     const color = colorField.value;
 
@@ -78,10 +79,6 @@ colorField.addEventListener("change", () => {
         setColor(color, true);
     };
 }, false);
-rangeWidthField.addEventListener("change", getWidth, false);
-undoButton.addEventListener("mousedown", undo, false);
-redoButon.addEventListener("mousedown", redo, false);
-
 color_change.addEventListener("mousedown", () => setColor(configurations.restoreColor));
 color_red.addEventListener("mousedown", () => setColor("red"));
 color_blue.addEventListener("mousedown", () => setColor("blue"));
@@ -96,6 +93,5 @@ document.addEventListener("keydown", (e) => {
     } else if (e.key.toLowerCase() === "y") {
         e.preventDefault();
         redo(e);
-    }
-
+    };
 });
